@@ -7,8 +7,7 @@ This application generates a random secure password that based on the criteria s
 https://oriarh.github.io/Module-3-challenge/
 
 ## Screenshot
-image.png
-
+!["Image Screenshot"](./screeshot.png)
 
 ## Installation
 N/A

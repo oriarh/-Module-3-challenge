@@ -7,6 +7,7 @@ function generatePassword(lengthDataTypeNumber,upperBool,lowerBool,numberBool,sp
   var numberss = "0123456789";
 var combination =[]
 
+//creates an array according to the answers 
   if (upperBool) {
       combination.push(upper)
     };
@@ -19,7 +20,11 @@ var combination =[]
     if (numberBool) {
       combination.push(numberss)
     };
+
+//Turns combination into a string
 var combination = combination.join("");
+
+//turns combinationArray back into an Array
 var combinationArray = combination.split("");
 console.log(combinationArray);
   var passwordFinal =[];
@@ -43,6 +48,7 @@ function writePassword() {
   var specialChars = prompt ("Would you like to include special case letters? Yes or No");
   var numbers = prompt ("Would you like to include Number case letters? Yes or No");
   
+  //turning the answers into boolean
   var upperBool = upperCase.toLowerCase() == "yes";
   var lowerBool = lowerCase.toLowerCase() == "yes";
   var specialBool = specialChars.toLowerCase() == "yes";

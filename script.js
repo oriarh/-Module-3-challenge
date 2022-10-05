@@ -26,11 +26,11 @@ var combination = combination.join("");
 
 //turns combinationArray back into an Array
 var combinationArray = combination.split("");
-console.log(combinationArray);
+//console.log(combinationArray);
   var passwordFinal =[];
 for (var i =0; i < lengthDataTypeNumber; i++){
  passwordFinal.push (combination[Math.floor(Math.random()*combination.length)]);
- console.log(passwordFinal);
+ //console.log(passwordFinal);
 }
 return passwordFinal.join("");
 }
@@ -40,26 +40,32 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-   
-  //Creating series of prompts
-  var length = prompt ("What length of the password do you require? Select between 8 to 128");
-  var upperCase = prompt ("Would you like to include UPPER case letters? Yes or No");
-  var lowerCase = prompt ("Would you like to include lower case letters? Yes or No");
-  var specialChars = prompt ("Would you like to include special case letters? Yes or No");
-  var numbers = prompt ("Would you like to include Number case letters? Yes or No");
   
-  //turning the answers into boolean
-  var upperBool = upperCase.toLowerCase() == "yes";
-  var lowerBool = lowerCase.toLowerCase() == "yes";
-  var specialBool = specialChars.toLowerCase() == "yes";
-  var numberBool = numbers.toLowerCase() == "yes";
-  var lengthDataTypeNumber = +length
+//Creating series of prompts
+var length = prompt ("What length of the password do you require? Select between 8 to 128");
+var upperCase = prompt ("Would you like to include UPPER case letters? Yes or No");
+var lowerCase = prompt ("Would you like to include lower case letters? Yes or No");
+var specialChars = prompt ("Would you like to include special case letters? Yes or No");
+var numbers = prompt ("Would you like to include Number case letters? Yes or No");
 
-  var password = generatePassword(lengthDataTypeNumber,upperBool,lowerBool,numberBool,specialBool);
+//turning the answers into boolean
+var upperBool = upperCase.toLowerCase() == "yes";
+var lowerBool = lowerCase.toLowerCase() == "yes";
+var specialBool = specialChars.toLowerCase() == "yes";
+var numberBool = numbers.toLowerCase() == "yes";
+var lengthDataTypeNumber = +length
+if (lengthDataTypeNumber < 8) {
+  lengthDataTypeNumber = 8
+};
+if (lengthDataTypeNumber > 128) {
+  lengthDataTypeNumber = 128
+};
 
-  var passwordText = document.querySelector("#password");
+var password = generatePassword(lengthDataTypeNumber,upperBool,lowerBool,numberBool,specialBool);
 
-  passwordText.value = password;
+var passwordText = document.querySelector("#password");
+
+passwordText.value = password;
 };
 
 // Add event listener to generate button

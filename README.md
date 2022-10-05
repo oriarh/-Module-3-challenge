@@ -4,7 +4,7 @@
 This application generates a random secure password that based on the criteria selected by an employee.
 
 ## URL
-https://oriarh.github.io/Module-3-challenge/
+https://oriarh.github.io/Password-Generator/
 
 ## Screenshot
 !["Image Screenshot"](./screeshot.png)
